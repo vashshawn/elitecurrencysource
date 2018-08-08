@@ -1,0 +1,12 @@
+bad node send version message: version 60020, blocks=923596, us=45.46.122.119:13373, them=46.29.218.151:49175, peer=46.29.218.151:49175
+
+87.249.133.85:62022 using obsolete version 60019; disconnecting
+
+accepted connection 81.190.61.24:61308
+getblocks 463 to 58b3db069f0f1f704ec4 limit 500
+  getblocks stopping at limit 962 000000004bd02998df2e
+received getdata (291 invsz)
+received block 19206a8eff0365b0ca42
+ProcessBlock: ORPHAN BLOCK, prev=f49f3bf1775531a3c3c8
+
+Added 1 addresses from 73.61.22.252: 38 tried, 15 new

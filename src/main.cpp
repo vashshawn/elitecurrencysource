@@ -15,6 +15,10 @@
 #include <boost/algorithm/string/replace.hpp>
 #include <boost/filesystem.hpp>
 #include <boost/filesystem/fstream.hpp>
+#ifdef WIN32
+#include <QtPlugin>
+Q_IMPORT_PLUGIN (QWindowsIntegrationPlugin);
+#endif
 
 
 using namespace std;
@@ -1059,9 +1063,9 @@ int64_t GetProofOfWorkReward(int64_t nFees)
 
 
 // miner's coin stake reward based on coin age spent (coin-days)
-int64_t GetProofOfStakeRewardV1(int64_t nCoinAge, int64_t nFees)
+int64_t GetProofOfStakeRewardV1(uint64_t nCoinAge, int64_t nFees)
 {
-    int64_t nSubsidy = nCoinAge * COIN_YEAR_REWARD_OLD * 33 / (365 * 33 + 8);
+    uint64_t nSubsidy = nCoinAge * COIN_YEAR_REWARD_OLD * 33 / (365 * 33 + 8);
 
     if (fDebug && GetBoolArg("-printcreation"))
         printf("GetProofOfStakeReward(): create=%s nCoinAge=%"PRId64"\n", FormatMoney(nSubsidy).c_str(), nCoinAge);
@@ -1070,9 +1074,20 @@ int64_t GetProofOfStakeRewardV1(int64_t nCoinAge, int64_t nFees)
 }
 
 // miner's coin stake reward based on coin age spent (coin-days)
-int64_t GetProofOfStakeRewardV2(int64_t nCoinAge, int64_t nFees)
+int64_t GetProofOfStakeRewardV2(uint64_t nCoinAge, int64_t nFees)
 {
-    int64_t nSubsidy = nCoinAge * COIN_YEAR_REWARD_OLD * 33 / (365 * 33 + 8) / 2;
+    uint64_t nSubsidy = (unsigned) nCoinAge * COIN_YEAR_REWARD_OLD * 33 / (365 * 33 + 8) / 2;
+
+//    if (fDebug && GetBoolArg("-printcreation"))
+        printf("GetProofOfStakeRewardV2(): create=%s nCoinAge=%"PRId64"\n", FormatMoney(nSubsidy).c_str(), nCoinAge);
+
+    return nSubsidy + nFees;
+}
+
+// miner's coin stake reward based on coin age spent (coin-days)
+int64_t GetProofOfStakeRewardV3(uint64_t nCoinAge, int64_t nFees)
+{
+    uint64_t nSubsidy = nCoinAge * (COIN_YEAR_REWARD_OLD/4) * 33 / (365 * 33 + 8);
 
     if (fDebug && GetBoolArg("-printcreation"))
         printf("GetProofOfStakeReward(): create=%s nCoinAge=%"PRId64"\n", FormatMoney(nSubsidy).c_str(), nCoinAge);
@@ -1081,9 +1096,9 @@ int64_t GetProofOfStakeRewardV2(int64_t nCoinAge, int64_t nFees)
 }
 
 // miner's coin stake reward based on coin age spent (coin-days)
-int64_t GetProofOfStakeRewardV3(int64_t nCoinAge, int64_t nFees)
+int64_t GetProofOfStakeRewardV4(uint64_t nCoinAge, int64_t nFees)
 {
-    int64_t nSubsidy = nCoinAge * COIN_YEAR_REWARD_OLD * 33 / (365 * 33 + 8) / 4;
+    uint64_t nSubsidy = nCoinAge * (COIN_YEAR_REWARD_OLD/8) * 33 / (365 * 33 + 8);
 
     if (fDebug && GetBoolArg("-printcreation"))
         printf("GetProofOfStakeReward(): create=%s nCoinAge=%"PRId64"\n", FormatMoney(nSubsidy).c_str(), nCoinAge);
@@ -1092,9 +1107,9 @@ int64_t GetProofOfStakeRewardV3(int64_t nCoinAge, int64_t nFees)
 }
 
 // miner's coin stake reward based on coin age spent (coin-days)
-int64_t GetProofOfStakeRewardV4(int64_t nCoinAge, int64_t nFees)
+int64_t GetProofOfStakeRewardV5(uint64_t nCoinAge, int64_t nFees)
 {
-    int64_t nSubsidy = nCoinAge * COIN_YEAR_REWARD_OLD * 33 / (365 * 33 + 8) / 8;
+    uint64_t nSubsidy = nCoinAge * (COIN_YEAR_REWARD_OLD/16) * 33 / (365 * 33 + 8);
 
     if (fDebug && GetBoolArg("-printcreation"))
         printf("GetProofOfStakeReward(): create=%s nCoinAge=%"PRId64"\n", FormatMoney(nSubsidy).c_str(), nCoinAge);
@@ -1103,20 +1118,9 @@ int64_t GetProofOfStakeRewardV4(int64_t nCoinAge, int64_t nFees)
 }
 
 // miner's coin stake reward based on coin age spent (coin-days)
-int64_t GetProofOfStakeRewardV5(int64_t nCoinAge, int64_t nFees)
-{
-    int64_t nSubsidy = nCoinAge * COIN_YEAR_REWARD_OLD * 33 / (365 * 33 + 8) / 16;
-
-    if (fDebug && GetBoolArg("-printcreation"))
-        printf("GetProofOfStakeReward(): create=%s nCoinAge=%"PRId64"\n", FormatMoney(nSubsidy).c_str(), nCoinAge);
-
-    return nSubsidy + nFees;
-}
-
-// miner's coin stake reward based on coin age spent (coin-days)
-int64_t GetProofOfStakeRewardV6(int64_t nCoinAge, int64_t nFees)
-{
-    int64_t nSubsidy = nCoinAge * COIN_YEAR_REWARD_OLD * 33 / (365 * 33 + 8) / 32;
+int64_t GetProofOfStakeRewardV6(uint64_t nCoinAge, int64_t nFees)
+{	//NOYE: mod'd code depends on the fact CENT is divisible by 2^5 ; 32 is the largest we can go here
+    uint64_t nSubsidy = nCoinAge * (COIN_YEAR_REWARD_OLD/32) * 33 / (365 * 33 + 8);
 
     if (fDebug && GetBoolArg("-printcreation"))
         printf("GetProofOfStakeReward(): create=%s nCoinAge=%"PRId64"\n", FormatMoney(nSubsidy).c_str(), nCoinAge);
@@ -1141,17 +1145,17 @@ int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees, unsigned int nTim
     if(nTime > FORK_TIME6)
         nReward = GetProofOfStakeRewardV7((int64_t)nCoinAge, nFees);	
     else if(nTime > FORK_TIME5)
-        nReward = GetProofOfStakeRewardV6((int64_t)nCoinAge, nFees);
+        nReward = GetProofOfStakeRewardV6((uint64_t)nCoinAge, nFees);
     else if(nTime > FORK_TIME4)
-        nReward = GetProofOfStakeRewardV5((int64_t)nCoinAge, nFees);
+        nReward = GetProofOfStakeRewardV5((uint64_t)nCoinAge, nFees);
     else if(nTime > FORK_TIME3)
-        nReward = GetProofOfStakeRewardV4((int64_t)nCoinAge, nFees);
+        nReward = GetProofOfStakeRewardV4((uint64_t)nCoinAge, nFees);
     else if(nTime > FORK_TIME2)
-        nReward = GetProofOfStakeRewardV3((int64_t)nCoinAge, nFees);
+        nReward = GetProofOfStakeRewardV3((uint64_t)nCoinAge, nFees);
     else if(nTime > FORK_TIME)
-        nReward = GetProofOfStakeRewardV2((int64_t)nCoinAge, nFees);
+        nReward = GetProofOfStakeRewardV2((uint64_t)nCoinAge, nFees);
     else
-       nReward = GetProofOfStakeRewardV1((int64_t)nCoinAge, nFees);
+       nReward = GetProofOfStakeRewardV1((uint64_t)nCoinAge, nFees);
 
     return nReward;
 }
@@ -1731,6 +1735,7 @@ bool CBlock::ConnectBlock(CTxDB& txdb, CBlockIndex* pindex, bool fJustCheck)
         // Check coinbase reward
         if (vtx[0].GetValueOut() > nReward)
             return DoS(50, error("ConnectBlock() : coinbase reward exceeded (actual=%"PRId64" vs calculated=%"PRId64")",
+		
                    vtx[0].GetValueOut(),
                    nReward));
     }
@@ -1744,7 +1749,14 @@ bool CBlock::ConnectBlock(CTxDB& txdb, CBlockIndex* pindex, bool fJustCheck)
         int64_t nCalculatedStakeReward = GetProofOfStakeReward(nCoinAge, nFees, vtx[1].nTime);
 
         if (nStakeReward > nCalculatedStakeReward)
+		{
+		printf("-->CoinAge: %u\n",nCoinAge);
+		printf("-->Fees: %u\n",nFees);
+		printf("-->nTime: %u\n",vtx[1].nTime);
+
             return DoS(100, error("ConnectBlock() : coinstake pays too much(actual=%"PRId64" vs calculated=%"PRId64")", nStakeReward, nCalculatedStakeReward));
+		}
+
     }
 
     // ppcoin: track money supply and mint amount info
