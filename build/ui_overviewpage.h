@@ -15,6 +15,7 @@
 #include <QtGui/QButtonGroup>
 #include <QtGui/QFormLayout>
 #include <QtGui/QFrame>
+#include <QtGui/QGridLayout>
 #include <QtGui/QHBoxLayout>
 #include <QtGui/QHeaderView>
 #include <QtGui/QLabel>
@@ -59,22 +60,22 @@ public:
     QListView *listTransactions;
     QSpacerItem *verticalSpacer_2;
     QFrame *diffplotframe;
-    QVBoxLayout *verticalLayout_3_1;
-    QHBoxLayout *horizontalLayout_3;
+    QGridLayout *gridLayout;
     QCustomPlot *diffplot;
 
     void setupUi(QWidget *OverviewPage)
     {
         if (OverviewPage->objectName().isEmpty())
             OverviewPage->setObjectName(QString::fromUtf8("OverviewPage"));
-        OverviewPage->resize(760, 397);
+        OverviewPage->resize(760, 498);
         verticalLayout_5 = new QVBoxLayout(OverviewPage);
         verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
         verticalLayout_5->setContentsMargins(-1, 2, -1, -1);
         frameTop = new QFrame(OverviewPage);
         frameTop->setObjectName(QString::fromUtf8("frameTop"));
-        frameTop->setFrameShape(QFrame::StyledPanel);
-        frameTop->setFrameShadow(QFrame::Raised);
+        frameTop->setFrameShape(QFrame::NoFrame);
+        frameTop->setFrameShadow(QFrame::Sunken);
+        frameTop->setLineWidth(0);
         verticalLayout_4 = new QVBoxLayout(frameTop);
         verticalLayout_4->setSpacing(5);
         verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
@@ -198,9 +199,9 @@ public:
 
         frame_3 = new QFrame(frameTop);
         frame_3->setObjectName(QString::fromUtf8("frame_3"));
-        frame_3->setFrameShape(QFrame::StyledPanel);
+        frame_3->setFrameShape(QFrame::NoFrame);
         frame_3->setFrameShadow(QFrame::Plain);
-        frame_3->setLineWidth(1);
+        frame_3->setLineWidth(-1);
         verticalLayout_6 = new QVBoxLayout(frame_3);
         verticalLayout_6->setObjectName(QString::fromUtf8("verticalLayout_6"));
         labelBalance = new QLabel(frame_3);
@@ -291,23 +292,18 @@ public:
 
         diffplotframe = new QFrame(OverviewPage);
         diffplotframe->setObjectName(QString::fromUtf8("diffplotframe"));
-        diffplotframe->setFrameShape(QFrame::StyledPanel);
-        diffplotframe->setFrameShadow(QFrame::Raised);
-        verticalLayout_3_1 = new QVBoxLayout(diffplotframe);
-        verticalLayout_3_1->setObjectName(QString::fromUtf8("verticalLayout_3_1"));
-        verticalLayout_3_1->setContentsMargins(1, 1, 1, 1);
-        horizontalLayout_3 = new QHBoxLayout();
-        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
+        diffplotframe->setFrameShape(QFrame::NoFrame);
+        diffplotframe->setFrameShadow(QFrame::Plain);
+        diffplotframe->setLineWidth(0);
+        gridLayout = new QGridLayout(diffplotframe);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         diffplot = new QCustomPlot(diffplotframe);
         diffplot->setObjectName(QString::fromUtf8("diffplot"));
         sizePolicy.setHeightForWidth(diffplot->sizePolicy().hasHeightForWidth());
         diffplot->setSizePolicy(sizePolicy);
         diffplot->setMinimumSize(QSize(0, 180));
 
-        horizontalLayout_3->addWidget(diffplot);
-
-
-        verticalLayout_3_1->addLayout(horizontalLayout_3);
+        gridLayout->addWidget(diffplot, 0, 0, 1, 1);
 
 
         verticalLayout_5->addWidget(diffplotframe);

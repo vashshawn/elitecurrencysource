@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>760</width>
-    <height>397</height>
+    <height>498</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,10 +20,13 @@
    <item>
     <widget class="QFrame" name="frameTop">
      <property name="frameShape">
-      <enum>QFrame::StyledPanel</enum>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="frameShadow">
-      <enum>QFrame::Raised</enum>
+      <enum>QFrame::Sunken</enum>
+     </property>
+     <property name="lineWidth">
+      <number>0</number>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_4">
       <property name="spacing">
@@ -279,7 +282,7 @@
             <property name="text">
              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#333333;&quot;&gt;Number of Transactions:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
-			<property name="alignment">
+            <property name="alignment">
              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
             </property>
            </widget>
@@ -304,13 +307,13 @@
         <item>
          <widget class="QFrame" name="frame_3">
           <property name="frameShape">
-           <enum>QFrame::StyledPanel</enum>
+           <enum>QFrame::NoFrame</enum>
           </property>
           <property name="frameShadow">
            <enum>QFrame::Plain</enum>
           </property>
           <property name="lineWidth">
-           <number>1</number>
+           <number>-1</number>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_6">
            <item>
@@ -379,8 +382,8 @@
              <font>
               <family>Sans</family>
               <pointsize>11</pointsize>
-			  <weight>75</weight>
-			  <bold>true</bold>
+              <weight>75</weight>
+              <bold>true</bold>
              </font>
             </property>
             <property name="text">
@@ -456,56 +459,39 @@
      </item>
     </layout>
    </item>
-
    <item>
-        <widget class="QFrame" name="diffplotframe">
-         <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout_3_1">
-          <property name="leftMargin">
-           <number>1</number>
-          </property>
-          <property name="topMargin">
-           <number>1</number>
-          </property>
-          <property name="rightMargin">
-           <number>1</number>
-          </property>
-          <property name="bottomMargin">
-           <number>1</number>
-          </property>
-          <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_3">
-            <item>
-             <widget class="QCustomPlot" name="diffplot" native="true">
-              
-			  <property name="sizePolicy">
-             <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-			  
-			  <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>180</height>
-               </size>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-         </layout>
-        </widget>
-       </item>
+    <widget class="QFrame" name="diffplotframe">
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="lineWidth">
+      <number>0</number>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="QCustomPlot" name="diffplot" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>180</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
   </layout>
  </widget>
- 
  <customwidgets>
   <customwidget>
    <class>QCustomPlot</class>
@@ -514,7 +500,6 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- 
  <resources/>
  <connections/>
 </ui>
