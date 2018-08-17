@@ -55,7 +55,7 @@ static map<CNetAddr, LocalServiceInfo> mapLocalHost;
 static bool vfReachable[NET_MAX] = {};
 static bool vfLimited[NET_MAX] = {};
 static CNode* pnodeLocalHost = NULL;
-CAddress addrSeenByPeer(CService("0.0.0.0", 0), nLocalServices);
+CAddress addrSeenByPeer(CService("", 0), nLocalServices);
 uint64_t nLocalHostNonce = 0;
 boost::array<int, THREAD_MAX> vnThreadsRunning;
 static std::vector<SOCKET> vhListenSocket;
@@ -362,11 +362,11 @@ bool GetMyExternalIP(CNetAddr& ipRet)
         //  <?php echo $_SERVER["REMOTE_ADDR"]; ?>
         if (nHost == 1)
         {
-            addrConnect = CService("",0); // checkip.dyndns.org
+            addrConnect = CService("91.198.22.70",80); // checkip.dyndns.org
 
             if (nLookup == 1)
             {
-                CService addrIP("", 0, false);
+                CService addrIP("checkip.dyndns.org", 80, true);
                 if (addrIP.IsValid())
                     addrConnect = addrIP;
             }
@@ -381,17 +381,17 @@ bool GetMyExternalIP(CNetAddr& ipRet)
         }
         else if (nHost == 2)
         {
-            addrConnect = CService("", 0); // www.showmyip.com
+            addrConnect = CService("198.105.244.228", 80); // check-ip.ml
 
             if (nLookup == 1)
             {
-                CService addrIP("", 0, false);
+                CService addrIP("check-ip.ml", 80, true);
                 if (addrIP.IsValid())
                     addrConnect = addrIP;
             }
 
             pszGet = "GET /simple/ HTTP/1.1\r\n"
-                     "Host: www.showmyip.com\r\n"
+                     "Host: check-ip.ml\r\n"
                      "User-Agent: 1337\r\n"
                      "Connection: close\r\n"
                      "\r\n";
@@ -1142,6 +1142,11 @@ static const char *strDNSSeed[][2] = {
     {"US-E-2", "206.189.226.95"},
     {"UK-2", "178.128.164.219"},
     {"Asia-2", "206.189.33.55"},
+    {"AMS", "188.166.73.116"},
+    {"SING", "188.166.216.243"},
+    {"US-W", "138.68.6.192"},
+
+
 
 
 };
