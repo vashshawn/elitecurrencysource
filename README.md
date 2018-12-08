@@ -27,20 +27,6 @@ stable release versions of Elite.
 Feature branches are created when there are major new features being
 worked on by several people.
 
-
-Donate To Support Development
-=================================
-**1337**: LeetDevFpGxwdbqcmQbNZAikqqRPBRRZP8
-
-**BTC**: 17tuXyRsDEBQrZT99JGsubb6N8sh547XvX
-
-**ETH**: 0x01E363B7aC2E78EFFa597B0D9eBC50775468C720
-
-**LTC**: LXjtkT4ukNqhrRQHufah3aQLqjuJpbZctT
-
-**PayPal**: 1337foundationsite@gmail.com
-
-
 License
 ===========================
 Elite Core is released under the terms of the MIT license. See http://opensource.org/licenses/MIT for more information.
