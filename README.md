@@ -1,6 +1,6 @@
 Elite Current Version
 ===========================
-Version: 2.0.1.1
+Version: 2.0.1.2
 
 IF YOU'RE RUNNING A WALLET OF A LOWER VERSION YOU NEED TO UPDATE A.S.A.P.
 
