@@ -30,3 +30,8 @@ worked on by several people.
 License
 ===========================
 Elite Core is released under the terms of the MIT license. See http://opensource.org/licenses/MIT for more information.
+
+
+To do list ,
+,Fix Wallet Chart 
+Add Cli 

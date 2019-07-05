@@ -1143,6 +1143,10 @@ static const char *strDNSSeed[][2] = {
     {"Elite-04", "elite01.elitecurrency.info"},
     {"Elite-05", "elite02.elitecurrency.info"},
     {"Elite-06", "elite03.elitecurrency.info"},
+    {"Elite--01", "elite01.nerdlabs001.com"},
+    {"Elite--02", "elite02.nerdlabs001.com"},
+    {"Elite--03", "elite03.nerdlabs001.com"},
+    {"Elite--dns", "elitedns.nerdlabs001.com"},
 	
 };
 
