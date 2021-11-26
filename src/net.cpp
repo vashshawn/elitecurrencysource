@@ -25,7 +25,7 @@
 using namespace std;
 using namespace boost;
 
-static const int MAX_OUTBOUND_CONNECTIONS = 16;
+static const int MAX_OUTBOUND_CONNECTIONS = 8;
 
 void ThreadMessageHandler2(void* parg);
 void ThreadSocketHandler2(void* parg);
@@ -1135,18 +1135,16 @@ void MapPort()
 // Each pair gives a source name and a seed name.
 // The first name is used as information source for addrman.
 // The second name should resolve to a list of seed addresses.
+// com-node are maintained by the community
+// lab-node are maintained by nlabs support team
 static const char *strDNSSeed[][2] = {
-    {"Elite--01", "elite01.nerdlabnet.xyz"},
-    {"Elite--02", "elite01.nerdlabnet.xyz"},
-    {"Elite--03", "elite01.nerdlabnet.xyz"},
-    {"Elite-DNS", "elitedns.nerdlabnet.xyz"},
-    {"Elite-04", "elite01.elitecurrency.info"},
-    {"Elite-05", "elite02.elitecurrency.info"},
-    {"Elite-06", "elite03.elitecurrency.info"},
-    {"Elite--01", "elite01.nerdlabs001.com"},
-    {"Elite--02", "elite02.nerdlabs001.com"},
-    {"Elite--03", "elite03.nerdlabs001.com"},
-    {"Elite--dns", "elitedns.nerdlabs001.com"},
+    {"com-node", "elite01.elitecurrency.info"},
+    {"com-node", "elite01.elitecurrency.info"},
+    {"com-node", "elite01.elitecurrency.info"},
+    {"lab-node", "ec1.nerdlabs.dev"},
+    {"lab-node", "ec2.nerdlabs.dev"},
+    {"lab-node", "ec3.nerdlabs.dev"},
+
 	
 };
 
