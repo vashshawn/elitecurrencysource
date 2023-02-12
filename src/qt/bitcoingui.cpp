@@ -81,6 +81,7 @@ BitcoinGUI::BitcoinGUI(QWidget *parent):
     updateStyle();	
     resize(960, 740);
     setWindowTitle(tr("Elite") + " - " + tr("Wallet"));
+
 #ifndef Q_OS_MAC
     qApp->setWindowIcon(QIcon(":icons/bitcoin"));
     setWindowIcon(QIcon(":icons/bitcoin"));
@@ -352,16 +353,19 @@ void BitcoinGUI::createMenuBar()
 
 void BitcoinGUI::createToolBars()
 {
-	mainIcon = new QLabel (this);
-    mainIcon->setPixmap(QPixmap(":icons/logo"));
-    mainIcon->show();
+
+    // logo toolbar: disabled
+
+    //mainIcon = new QLabel (this);
+    //mainIcon->setPixmap(QPixmap(":icons/logo"));
+    //mainIcon->show();
 	
-	QToolBar *toolbar = addToolBar(tr("Logo toolbar"));
-	addToolBar(Qt::TopToolBarArea,toolbar);
-    toolbar->setOrientation(Qt::Horizontal);
-    toolbar->setFloatable(false);
-    toolbar->setMovable(false);
-    toolbar->addWidget(mainIcon);
+    //QToolBar *toolbar = addToolBar(tr("Logo toolbar"));
+    //addToolBar(Qt::TopToolBarArea,toolbar);
+    //toolbar->setOrientation(Qt::Horizontal);
+    //toolbar->setFloatable(false);
+    //toolbar->setMovable(false);
+    //toolbar->addWidget(mainIcon);
 	
     QToolBar *toolbar2 = addToolBar(tr("Actions toolbar"));
 	addToolBar(Qt::TopToolBarArea,toolbar2);
