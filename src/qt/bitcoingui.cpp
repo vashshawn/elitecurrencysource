@@ -387,6 +387,7 @@ void BitcoinGUI::createToolBars()
     toolbar3->setMovable(false);	
     toolbar3->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
 	toolbar3->addAction(openRPCConsoleAction);
+    toolbar3->addAction(exportAction);
 }
 
 void BitcoinGUI::setClientModel(ClientModel *clientModel)
