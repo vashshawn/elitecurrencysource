@@ -81,7 +81,7 @@ BitcoinGUI::BitcoinGUI(QWidget *parent):
     updateStyle();	
     resize(960, 740);
     setWindowTitle(tr("Elite") + " - " + tr("Wallet"));
-    //qApp->setStyleSheet("QMainWindow { background-image:url(:/images/backround);border:none; } ");
+    //qApp->setStyleSheet("QMainWindow { background-image:url(:/images/bacground);border:none; } ");
 
 #ifndef Q_OS_MAC
     qApp->setWindowIcon(QIcon(":icons/bitcoin"));
