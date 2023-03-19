@@ -1,12 +1,12 @@
 * {
-     background: #ffffff;
+     background: #252525;
      color: #272727;
      font-family: Verdana, Geneva, sans-serif;
 }
 
 QLabel
 {
-	background: #transparent;
+        background: #transparent;
         color: #272727;
 }
 
@@ -27,20 +27,20 @@ QFrame#frame, QFrame#frame_2, QFrame#frameCoinControl, QFrame#SendCoinsEntry, QS
 
 QStatusBar
 {
-    border-top: 2px solid #1e1e1e;
-	background-color: #1e1e1e;
+    border-top: 2px solid #252525;
+        background-color: #252525;
 }
 
 QWidget
 {
-    color: #262626;
+    color: #e9d2a5;
     outline: none;
 }
 
 QWidget:disabled
 {
-    color: #CCCCCC;
-    background-color: #262626;
+    color: #e9d2a5;
+    background-color: #252525;
 }
 
 QWidget#treeWidget
@@ -50,7 +50,7 @@ QWidget#treeWidget
 
 QLabel:disabled
 {
-	background: #FFFFFF;
+        background: #FFFFFF;
 }
 
 QActionGroup
@@ -62,57 +62,54 @@ QActionGroup
 
 QToolBar
 {
+    display: inline;
     border: none;
-    background: #1e1e1e;
-	color: #FFFFFF;
-	min-height: 80px;
-	min-width: 162px;
-	
-	
+    background: #313131;
+        color: #FFFFFF;
+        min-height: 50px;
+        min-width: 200px;
+
+
 }
 
 
 
 QToolButton
 {
-color: #FFFFFF; border: none; icon-size: 72px; font-size:12px;font-family:Open Sans;padding-top:10px; width:120px; height:80px; background-color: #1e1e1e;
+color: #515151; border: none; padding-left:5px;font-family:Century Gothic;font-size:20px;text-align:center;background-color: #313131;
 }
 
-QToolButton:hover
-{
-        background-color: #752020;
-}
 
 QToolButton:checked
 {
-	background: #4D1515;
-        color: #FFFFFF;
+
+        color: #e9d2a5;
         border: none;
 }
 
 QToolButton#addressBookButton, QToolButton#pasteButton, QToolButton#deleteButton
 {
-	background: #FFFFFF;
+        background: #FFFFFF;
 }
 
 QMenuBar
 {
-    border-bottom: 1px solid #4D1515;
+
     background: #1e1e1e;
-	color: #FFFFFF;
+        color: #FFFFFF;
 }
 
 QMenuBar::item
 {
     background: #1e1e1e;
-	color: #FFFFFF;
+        color: #FFFFFF;
 }
 
 QMenuBar::item:selected
 {
     background: #752020;
     border: 1px solid #AAAAAA;
-	color: #FFFFFF;
+        color: #FFFFFF;
 }
 
 QMenuBar::item:pressed
@@ -121,19 +118,19 @@ QMenuBar::item:pressed
     background-color: #752020;
     margin-bottom:-1px;
     padding-bottom:1px;
-	color: #FFFFFF;
+        color: #FFFFFF;
 }
 
 QMenu
 {
     border: 3px solid #752020;
-	background-color: #1e1e1e;
+        background-color: #1e1e1e;
 }
 
 QMenu::item
 {
     background: #1e1e1e;
-	color: #FFFFFF;
+        color: #FFFFFF;
     padding: 2px 20px 2px 20px;
 }
 
@@ -423,8 +420,8 @@ QProgressBar
 
 progressBarLabel
 {
-	background-color: #1e1e1e;
-	color: #FFFFFF;
+        background-color: #1e1e1e;
+        color: #FFFFFF;
 }
 
 QProgressBar::chunk
@@ -465,7 +462,7 @@ QTabBar::tab:first:!selected
 
 QTabBar::tab:!selected
 {
-    color: #262626;
+    color: #e9d2a5;
     border-bottom-style: solid;
     margin-top: 3px;
     background-color: #F5F5F5;
