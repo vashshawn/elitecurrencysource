@@ -52,6 +52,9 @@
         <file alias="background">res/images/background.png</file>
         <file alias="txbackground">res/images/txbackground.png</file>
         <file alias="wings-logo">res/images/wings-logo.png</file>
+        <file alias="overview-background">res/images/overview-background.png</file>
+        <file alias="balance">res/images/balance.png</file>
+        <file alias="rtx">res/images/rtx.png</file>
     </qresource>
     <qresource prefix="/movies">
         <file alias="update_spinner">res/movies/update_spinner.mng</file>
@@ -100,4 +103,5 @@
         <file alias="zh_CN">locale/bitcoin_zh_CN.qm</file>
         <file alias="zh_TW">locale/bitcoin_zh_TW.qm</file>
     </qresource>
+    <qresource prefix="/"/>
 </RCC>

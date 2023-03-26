@@ -4,12 +4,6 @@
      font-family: Verdana, Geneva, sans-serif;
 }
 
-QLabel
-{
-        background: #transparent;
-        color: #272727;
-}
-
 QToolTip
 {
      border: 1px solid #333333;
@@ -62,7 +56,7 @@ QActionGroup
 
 QToolBar
 {
-    display: inline;
+
     border: none;
     background: #313131;
         color: #FFFFFF;
@@ -95,8 +89,8 @@ QToolButton#addressBookButton, QToolButton#pasteButton, QToolButton#deleteButton
 QMenuBar
 {
 
-    background: #1e1e1e;
-        color: #FFFFFF;
+    background: #313131;
+        color: #515151;
 }
 
 QMenuBar::item
@@ -140,6 +134,7 @@ QMenu::item:selected
     background: #752020;
 }
 
+
 QMenu::item:disabled
 {
     color: #FAFAFA;
@@ -157,13 +152,13 @@ QMenu::separator
 
 QAbstractItemView
 {
-    background-color: #FFFFFF;
+    background-color: #252525;
 }
 
 
 QLineEdit
 {
-    background-color: #FFFFFF;
+    background-color: #20db20;
     padding: 1px;
     border: 1px solid #AAAAAA;
     border-radius: 2px;
@@ -499,5 +494,5 @@ QRadioButton:checked{
 
 QTableView
 {
-    alternate-background-color: #F7F7F7;
+    alternate-background-color: #252525;
 }

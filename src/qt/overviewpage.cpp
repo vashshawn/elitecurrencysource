@@ -19,8 +19,9 @@ double GetPoSKernelPS2(const CBlockIndex* pindex);
 #include <QAbstractItemDelegate>
 #include <QPainter>
 
-#define DECORATION_SIZE 64
-#define NUM_ITEMS 3
+
+#define DECORATION_SIZE 32
+#define NUM_ITEMS 6
 
 class TxViewDelegate : public QAbstractItemDelegate
 {
@@ -41,10 +42,10 @@ public:
         painter->setBackground(QBrush(QColor(255,255,255),Qt::SolidPattern));
         QRect decorationRect(mainRect.topLeft(), QSize(DECORATION_SIZE, DECORATION_SIZE));
         int xspace = DECORATION_SIZE + 8;
-        int ypad = 6;
-        int halfheight = (mainRect.height() - 2*ypad)/2;
+        int ypad = 1;
+        int halfheight = (mainRect.height() - 2*ypad);
         QRect amountRect(mainRect.left() + xspace, mainRect.top()+ypad, mainRect.width() - xspace, halfheight);
-        QRect addressRect(mainRect.left() + xspace, mainRect.top()+ypad+halfheight, mainRect.width() - xspace, halfheight);
+        QRect addressRect(mainRect.left() + xspace, mainRect.top()+ypad, mainRect.width() - xspace, halfheight);
         icon.paint(painter, decorationRect);
 
         QDateTime date = index.data(TransactionTableModel::DateRole).toDateTime();
@@ -59,7 +60,7 @@ public:
         }
 foreground = QColor(51,51,51);
         painter->setPen(foreground);
-        painter->drawText(addressRect, Qt::AlignLeft|Qt::AlignVCenter, address);
+        painter->drawText(addressRect, Qt::AlignHCenter|Qt::AlignVCenter, address);
 
         if(amount < 0)
         {
@@ -86,8 +87,8 @@ foreground = QColor(51,51,51);
         painter->drawText(amountRect, Qt::AlignLeft|Qt::AlignVCenter, GUIUtil::dateTimeStr(date));
 
         painter->setPen(QColor(204,204,204));
-        painter->drawLine(QPoint(mainRect.left(), mainRect.bottom()), QPoint(mainRect.right(), mainRect.bottom()));
-        painter->drawLine(QPoint(amountRect.left()-6, mainRect.top()), QPoint(amountRect.left()-6, mainRect.bottom()));
+        //painter->drawLine(QPoint(mainRect.left(), mainRect.bottom()), QPoint(mainRect.right(), mainRect.bottom()));
+        //painter->drawLine(QPoint(amountRect.left()-6, mainRect.top()), QPoint(amountRect.left()-6, mainRect.bottom()));
         painter->restore();
     }
 
