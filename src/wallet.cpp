@@ -15,8 +15,13 @@
 
 using namespace std;
 
-unsigned int nStakeSplitAge = 1 * 24 * 60 * 60;
-int64_t nStakeCombineThreshold = 1000 * COIN;
+
+// The following split & combine thresholds are important to security
+// Should not be adjusted if you don't understand the consequences
+unsigned int nStakeSplitAge = (60 * 60 * 24); // (24 Hours) If you find a POS block with coins aged less than this, it assumes you are staking well over the nStakeCombineThreshold and are finding blocks too quickly (
+// ( probably have a very high value compared to the network). It will split the payout back to you into two blocks, to give other people a better chance to stake.
+int64_t nStakeCombineThreshold = 1000000 * COIN;   //When appending coins to submit as a POS block, no further coins are added if this total is achieved
+
 
 //////////////////////////////////////////////////////////////////////////////
 //
