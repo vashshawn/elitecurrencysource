@@ -33,7 +33,7 @@ static const int DATABASE_VERSION = 70509;
 static const int PROTOCOL_VERSION = 60205;
 
 // earlier versions not supported as of Feb 2012, and are disconnected
-static const int MIN_PROTO_VERSION = 60199;
+static const int MIN_PROTO_VERSION = 209;
 static const int MIN_PROTO_VERSION_FORK = 60199;
 
 // nTime field added to CAddress, starting with this version;
