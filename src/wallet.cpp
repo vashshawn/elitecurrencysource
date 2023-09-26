@@ -18,9 +18,9 @@ using namespace std;
 
 // The following split & combine thresholds are important to security
 // Should not be adjusted if you don't understand the consequences
-unsigned int nStakeSplitAge = (60 * 60 * 24); // (24 Hours) If you find a POS block with coins aged less than this, it assumes you are staking well over the nStakeCombineThreshold and are finding blocks too quickly (
-// ( probably have a very high value compared to the network). It will split the payout back to you into two blocks, to give other people a better chance to stake.
-int64_t nStakeCombineThreshold = 1000000 * COIN;   //When appending coins to submit as a POS block, no further coins are added if this total is achieved
+// This is NON Working and needs to be addressed at a later time (flapmin)
+unsigned int nStakeSplitAge = 1 * 24 * 60 * 60;
+int64_t nStakeCombineThreshold = 1000 * COIN;
 
 
 //////////////////////////////////////////////////////////////////////////////
@@ -1719,14 +1719,14 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
                 vwtxPrev.push_back(pcoin.first);
                 txNew.vout.push_back(CTxOut(0, scriptPubKeyOut));
 
-				uint64_t nCoinAge;
-				CTxDB txdb("r");
-				if (txNew.GetCoinAge(txdb, nCoinAge))
-				{
-					uint64_t nTotalSize = pcoin.first->vout[pcoin.second].nValue + GetProofOfStakeReward(nCoinAge, 0, txNew.nTime);
-					if (nTotalSize / 2 > nStakeSplitThreshold * COIN)
-						txNew.vout.push_back(CTxOut(0, scriptPubKeyOut)); //split stake
-				}
+                uint64_t nCoinAge;
+                CTxDB txdb("r");
+                if (txNew.GetCoinAge(txdb, nCoinAge))
+                {
+                    uint64_t nTotalSize = pcoin.first->vout[pcoin.second].nValue + GetProofOfStakeReward(nCoinAge, 0, txNew.nTime);
+                    if (nTotalSize / 2 > nStakeSplitThreshold * COIN)
+                        txNew.vout.push_back(CTxOut(0, scriptPubKeyOut)); //split stake
+                }
 
                 if (fDebug && GetBoolArg("-printcoinstake"))
                     printf("CreateCoinStake : added kernel type=%d\n", whichType);

@@ -117,7 +117,7 @@ QMenuBar::item:pressed
 
 QMenu
 {
-    border: 3px solid #752020;
+    border: 3px solid #e9d2a5;
         background-color: #1e1e1e;
 }
 
@@ -144,7 +144,7 @@ QMenu::item:disabled
 QMenu::separator
 {
     height: 1px;
-    background-color: #752020;
+    background-color: #e9d2a5;
     margin-top: 1px;
     margin-bottom: 1px;
 }
@@ -158,27 +158,27 @@ QAbstractItemView
 
 QLineEdit
 {
-    background-color: #20db20;
+    background-color: #252525;
     padding: 1px;
-    border: 1px solid #AAAAAA;
+    border: 1px solid #e9d2a5;
     border-radius: 2px;
-    color: #333333;
+    color: #e9d2a5;
 }
 
 QLineEdit:disabled
 {
-    background-color: #FCFCFC;
+    background-color: #252525;
     color: #999999;
     border: 1px solid #F0F0F0;
 }
 
 QPushButton
 {
-    color: #FFFFFF;
+    color: #e9d2a5;
     font: bold;
-    background-color: #752020;
+    background-color: #252525;
     border-width: 1px;
-    border-color: #AAAAAA;
+    border-color: #e9d2a5;
     border-style: solid;
     border-radius: 4px;
     padding: 3px;
@@ -241,11 +241,11 @@ QComboBox:selected
 QComboBox QAbstractItemView
 {
     width: 35px;
-    border: 1px solid #2C2C2C;
+    border: 1px solid #e9d2a5;
     border-radius: 2px;
     background-color: #DFDFDF;
     selection-background-color: #FFFFFF;
-    color: #333333;
+    color: #e9d2a5;
 }
 
 QComboBox::drop-down
