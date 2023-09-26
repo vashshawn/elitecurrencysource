@@ -115,7 +115,7 @@ public:
         pwalletdbEncryption = NULL;
         nOrderPosNext = 0;
 		fSplitBlock = false;
-		nStakeSplitThreshold = 10000000;
+        nStakeSplitThreshold = 10000000;
 
         //MultiSend
         vMultiSend.clear();
@@ -135,7 +135,7 @@ public:
         pwalletdbEncryption = NULL;
         nOrderPosNext = 0;
         fSplitBlock = false;	
-		nStakeSplitThreshold = 10000000;
+        nStakeSplitThreshold = 10000000;
 
         //MultiSend
         vMultiSend.clear();

@@ -88,6 +88,11 @@
          </property>
          <item row="0" column="0">
           <widget class="QFrame" name="hot_coins_frame">
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
            <property name="styleSheet">
             <string notr="true">background:transparent;</string>
            </property>
@@ -151,7 +156,7 @@
                     <property name="font">
                      <font>
                       <family>DejaVu Sans</family>
-                      <pointsize>12</pointsize>
+                      <pointsize>13</pointsize>
                      </font>
                     </property>
                     <property name="cursor">
@@ -179,7 +184,7 @@
                     <property name="font">
                      <font>
                       <family>DejaVu Sans</family>
-                      <pointsize>11</pointsize>
+                      <pointsize>13</pointsize>
                      </font>
                     </property>
                     <property name="layoutDirection">
@@ -271,14 +276,15 @@
                    <widget class="QLabel" name="labelUnconfirmed">
                     <property name="font">
                      <font>
-                      <family>Sans</family>
+                      <family>DejaVu Sans</family>
+                      <pointsize>13</pointsize>
                      </font>
                     </property>
                     <property name="cursor">
                      <cursorShape>IBeamCursor</cursorShape>
                     </property>
                     <property name="toolTip">
-                     <string>Total of transactions that have yet to be confirmed, and do not yet count towards the current balance</string>
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#e9b96e;&quot;&gt;Total of transactions that have yet to be confirmed, and do not yet count towards the current balance&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                     </property>
                     <property name="text">
                      <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#333333;&quot;&gt;0 1337&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -299,7 +305,7 @@
                     <property name="font">
                      <font>
                       <family>DejaVu Sans</family>
-                      <pointsize>11</pointsize>
+                      <pointsize>13</pointsize>
                      </font>
                     </property>
                     <property name="text">
@@ -389,7 +395,7 @@
                     <property name="font">
                      <font>
                       <family>DejaVu Sans</family>
-                      <pointsize>11</pointsize>
+                      <pointsize>13</pointsize>
                      </font>
                     </property>
                     <property name="text">
@@ -404,7 +410,8 @@
                    <widget class="QLabel" name="labelNumTransactions">
                     <property name="font">
                      <font>
-                      <family>Sans</family>
+                      <family>DejaVu Sans</family>
+                      <pointsize>13</pointsize>
                      </font>
                     </property>
                     <property name="toolTip">
@@ -522,7 +529,8 @@
                    <widget class="QLabel" name="labelImmature">
                     <property name="font">
                      <font>
-                      <family>Sans</family>
+                      <family>DejaVu Sans</family>
+                      <pointsize>13</pointsize>
                      </font>
                     </property>
                     <property name="toolTip">
@@ -547,7 +555,7 @@
                     <property name="font">
                      <font>
                       <family>DejaVu Sans</family>
-                      <pointsize>11</pointsize>
+                      <pointsize>13</pointsize>
                      </font>
                     </property>
                     <property name="layoutDirection">
