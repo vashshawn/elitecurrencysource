@@ -22,7 +22,14 @@ static std::map<int, unsigned int> mapStakeModifierCheckpoints =
         (   17280, 0x9b1ea317 )
         (   20000, 0x7208107d )
         (   50000, 0x4a424815 )
+        (   75000, 0xccd75373 )
+        (  100000, 0x73a121bb )
+        (  150000, 0x91946a75 )
+        (  200000, 0xc97afbe5 )
+        (  250000, 0x004984d6 )
+        (  300000, 0xdf353878 )
         (  337902, 0x3e3911f6 )
+        (  350000, 0x57bc4b79 )
         (  598476, 0x173aee6f )
         (  598477, 0x048076ca )
         (  707039, 0xc9245816 )
@@ -61,6 +68,13 @@ static std::map<int, unsigned int> mapStakeModifierCheckpoints =
         ( 3800000, 0xb48eaf5b )
         ( 3900000, 0x74d79dc7 )
         ( 4000000, 0x70b089d4 )
+        ( 4100000, 0x402a63cf )
+        ( 4200000, 0xe6d92ce0 )
+        ( 4250000, 0x01a8aba7 )
+        ( 4260000, 0x59241596 )
+        ( 4280000, 0xab26dfa1 )
+        ( 4300000, 0x2ed734d7 )
+        ( 4305000, 0x856ae248 )
 
     ;
 
