@@ -58,7 +58,7 @@ public:
         {
             foreground = qvariant_cast<QColor>(value);
         }
-foreground = QColor(51,51,51);
+foreground = QColor(233, 210, 165);
         painter->setPen(foreground);
         painter->drawText(addressRect, Qt::AlignHCenter|Qt::AlignVCenter, address);
 

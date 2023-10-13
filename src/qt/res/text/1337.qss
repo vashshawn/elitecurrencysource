@@ -95,7 +95,7 @@ QMenuBar
 
 QMenuBar::item
 {
-    background: #1e1e1e;
+    background: #313131;
         color: #FFFFFF;
 }
 
@@ -496,3 +496,5 @@ QTableView
 {
     alternate-background-color: #252525;
 }
+
+
